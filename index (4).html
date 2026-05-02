@@ -1,0 +1,675 @@
+<html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chirp &amp; Plume — Toko Burung Online Terpercaya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Jost:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="style (2).css">
+</head>
+<body>
+
+<!-- =================== PRELOADER =================== -->
+<div class="preloader hidden" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-bird">
+      <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=160&amp;q=80" alt="bird">
+    </div>
+    <div class="preloader-text">Chirp &amp; Plume</div>
+  </div>
+</div>
+
+<!-- =================== NAV =================== -->
+<nav id="mainNav" class="scrolled">
+  <a class="nav-logo" onclick="navigateTo('home')">Chirp <span>&amp;</span> Plume</a>
+  <ul class="nav-links">
+  <li><a onclick="navigateTo('home')" data-page="home">Beranda</a></li>
+  <li><a onclick="navigateTo('koleksi')" data-page="koleksi">Koleksi Burung</a></li>
+  <li><a onclick="navigateTo('perlengkapan')" data-page="perlengkapan">Perlengkapan</a></li>
+  <li><a onclick="navigateTo('perawatan')" data-page="perawatan">Perawatan</a></li>
+  <li><a onclick="navigateTo('ulasan')" data-page="ulasan">Ulasan</a></li>
+</ul>
+  <div class="nav-right">
+    <div class="nav-cart" id="cartBtn">
+      <span class="cart-icon">🛒</span>
+      <span>Keranjang</span>
+      <div class="cart-count" id="cartCount">0</div>
+    </div>
+  </div>
+</nav>
+
+<!-- =================== HOME PAGE =================== -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">Toko Burung Terpercaya Sejak 2018</div>
+      <h1 class="hero-title">
+        Temukan Teman<br>
+        kicau Pilihan<br>
+        <em>Terbaik Anda</em>
+      </h1>
+      <p class="hero-desc">Kami menghadirkan koleksi burung eksotis, perlengkapan premium, dan nutrisi terbaik untuk sahabat kicau Anda. Perawatan penuh kasih mulai dari sini.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="navigateTo('koleksi')">Jelajahi Koleksi</button>
+        <button class="btn-ghost" onclick="navigateTo('perlengkapan')">Lihat Perlengkapan</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">200+</div><div class="stat-label">Spesies Tersedia</div></div>
+        <div><div class="stat-num">5K+</div><div class="stat-label">Pelanggan Puas</div></div>
+        <div><div class="stat-num">7 thn</div><div class="stat-label">Pengalaman</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <video class="hero-video" autoplay="" muted="" loop="" playsinline="">
+        <source src="vid burung beranda.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-badge">✦ Free<br>Ongkir ✦<br>Min 200rb</div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span class="marquee-item">Pakan Premium <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Kandang Mewah <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Burung Kicau <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Aksesoris Eksklusif <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Vitamin &amp; Suplemen <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Garansi Kesehatan <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Konsultasi Gratis <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Pakan Premium <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Kandang Mewah <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Burung Kicau <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Aksesoris Eksklusif <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Vitamin &amp; Suplemen <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Garansi Kesehatan <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Konsultasi Gratis <span class="marquee-dot">◆</span></span>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <div class="cat-header">
+      <div>
+        <div class="section-label">Temukan Kebutuhan Anda</div>
+        <h2 class="section-title">Kategori <em style="font-style:italic;color:var(--terra)">Unggulan</em></h2>
+      </div>
+      <button class="btn-ghost" onclick="navigateTo('koleksi')">Lihat Semua</button>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card reveal visible" onclick="navigateTo('koleksi')">
+        <div class="cat-card-img-wrap"><img src="kumarsu6745-love-bird-10130469.jpg" alt="Burung Eksotis"></div>
+        <div class="cat-card-body"><div class="cat-name">Burung Eksotis</div><div class="cat-count">25 Spesies</div><div class="cat-arrow">→</div></div>
+      </div>
+      <div class="cat-card reveal reveal-delay-1 visible" onclick="navigateTo('perlengkapan','sangkar')">
+        <div class="cat-card-img-wrap"><img src="sangkar cantik.jpeg" alt="Kandang Sangkar"></div>
+        <div class="cat-card-body"><div class="cat-name">Kandang &amp; Sangkar</div><div class="cat-count">40 Pilihan</div><div class="cat-arrow">→</div></div>
+      </div>
+      <div class="cat-card reveal reveal-delay-2 visible" onclick="navigateTo('perlengkapan','pakan')">
+        <div class="cat-card-img-wrap"><img src="pakan biji burung.jpeg" alt="Pakan Biji-bijian"></div>
+        <div class="cat-card-body"><div class="cat-name">Pakan &amp; Nutrisi</div><div class="cat-count">30 Produk</div><div class="cat-arrow">→</div></div>
+      </div>
+      <div class="cat-card reveal reveal-delay-3 visible" onclick="navigateTo('perawatan')">
+        <div class="cat-card-img-wrap"><img src="perawatan brng.jpeg" alt="Perawatan Burung"></div>
+        <div class="cat-card-body"><div class="cat-name">Perawatan Burung</div><div class="cat-count">Panduan Lengkap</div><div class="cat-arrow">→</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="featured" id="products">
+    <div class="prod-header">
+      <div>
+        <div class="section-label">Pilihan Terbaik</div>
+        <h2 class="section-title">Produk <em style="font-style:italic;color:var(--terra)">Terpopuler</em></h2>
+      </div>
+      <div class="filter-tabs">
+        <button class="tab active" data-filter="all">Semua</button>
+        <button class="tab" data-filter="burung">Burung</button>
+        <button class="tab" data-filter="sangkar">sangkar</button>
+        <button class="tab" data-filter="pakan">Pakan</button>
+      </div>
+    </div>
+    <div class="prod-grid" id="productGrid"></div>
+  </section>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="banner-left">
+      <div class="banner-tag">✦ Program Spesial</div>
+      <h2 class="banner-title">Kandang Impian<br>untuk Sahabat<br><em>Kicau Anda</em></h2>
+      <p class="banner-text">Koleksi kandang premium kami dirancang dengan material anti-karat berkualitas tinggi, memastikan burung Anda nyaman dan aman.</p>
+      <button class="btn-light" onclick="navigateTo('perlengkapan')">Lihat Koleksi Kandang</button>
+    </div>
+    <div class="banner-right">
+      <img src="sangkarrrrr.jpeg" alt="Kandang Premium">
+      <div class="banner-right-overlay"></div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-label">Kata Pelanggan</div>
+    <h2 class="section-title">Mereka Sudah <em style="font-style:italic;color:var(--terra)">Mempercayai</em> Kami</h2>
+    <div class="test-grid">
+      <div class="test-card reveal visible">
+        <div class="test-quote">"</div>
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Burung lovebird saya sangat sehat dan aktif setelah membeli dari Chirp &amp; Plume. Pelayanannya ramah dan pengirimannya aman. Sangat direkomendasikan!</p>
+        <div class="test-author">
+          <img class="test-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&amp;q=80" alt="Sari Dewi">
+          <div><div class="test-name">Dewi</div><div class="test-info">Jakarta Selatan • Pelanggan 2 tahun</div></div>
+        </div>
+      </div>
+      <div class="test-card reveal reveal-delay-1 visible">
+        <div class="test-quote">"</div>
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Kandang Victorian XL yang saya beli kualitasnya luar biasa. Bukan cuma fungsional tapi juga jadi dekorasi ruang tamu yang cantik. Worth every penny!</p>
+        <div class="test-author">
+          <img class="test-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&amp;q=80" alt="Budi Santoso">
+          <div><div class="test-name">Ikbal</div><div class="test-info">Bandung • Kolektor Burung</div></div>
+        </div>
+      </div>
+      <div class="test-card reveal reveal-delay-2 visible">
+        <div class="test-quote">"</div>
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Konsultasi gratis dengan tim mereka sangat membantu. Saya jadi tahu cara merawat burung murai yang benar. Pakan organiknya terbukti bikin bulu makin mengkilap!</p>
+        <div class="test-author">
+          <img class="test-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&amp;q=80" alt="Maya Putri">
+          <div><div class="test-name">Putri</div><div class="test-info">Surabaya • Breeder Profesional</div></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <div id="ulasanBeranda"></div>
+
+  <!-- CTA ULASAN -->
+  <div class="ulasan-action-bar">
+    <div class="ulasan-action-inner">
+      <button class="btn-ulasan-cta" onclick="navigateTo('ulasan')">
+        LIHAT SEMUA ULASAN &nbsp;→
+      </button>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <div class="section-label" style="justify-content:center;margin-bottom:12px;">Tetap Terhubung</div>
+    <h2 class="section-title">Dapatkan Tips &amp; <em style="font-style:italic;color:var(--deep)">Promo Eksklusif</em></h2>
+    <p class="newsletter-sub">Daftar sekarang dan dapatkan voucher diskon 10% untuk pembelian pertama Anda</p>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="email@anda.com">
+      <button class="newsletter-btn">Daftar</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Chirp <span>&amp;</span> Plume</div>
+        <p class="footer-tagline">Toko burung dan perlengkapan terpercaya di Indonesia. Menghadirkan kebahagiaan lewat setiap kicauan.</p>
+        <div class="footer-social">
+          <div class="social-btn">📘</div>
+          <div class="social-btn">📸</div>
+          <div class="social-btn">🐦</div>
+          <div class="social-btn">▶️</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Halaman</div>
+        <ul class="footer-links">
+          <li><a onclick="navigateTo('home')">Beranda</a></li>
+          <li><a onclick="navigateTo('koleksi')">Koleksi Burung</a></li>
+          <li><a onclick="navigateTo('perlengkapan')">Perlengkapan</a></li>
+          <li><a onclick="navigateTo('perawatan')">Perawatan</a></li>
+          <li><a onclick="navigateTo('ulasan')">Ulasan</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Informasi</div>
+        <ul class="footer-links">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a onclick="navigateTo('ulasan')">Ulasan Pelanggan</a></li>
+          <li><a href="#">Panduan Pembeli</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Kontak</div>
+        <ul class="footer-links">
+          <li><a href="#">📍 Jl. Kapten Abdullah, Plajju talang putri, Palembang</a></li>
+          <li><a href="#">📞 +62 887-0827-8441</a></li>
+          <li><a href="#">✉️ halo@chirpplume.id</a></li>
+          <li><a href="#">⏰ Senin–Sabtu, 08–20 WIB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Chirp &amp; Plume. Hak cipta dilindungi.</div>
+      <div class="footer-pay">💳 🏦 📱 💰</div>
+    </div>
+  </footer>
+</div>
+
+<!-- =================== KOLEKSI BURUNG PAGE =================== -->
+<div class="page" id="page-koleksi">
+  <div class="page-hero" style="min-height:380px">
+    <div class="page-hero-bg">
+      <img src="fotoblend-barn-swallows-8022044.jpg" alt="Koleksi Burung">
+      <div style="position:absolute;inset:5;background:linear-gradient(to right,rgba(221,232,213,.92) 0%,rgba(221,232,213,.55) 60%,transparent 100%)"></div>
+    </div>
+    <div class="page-hero-content">
+      <div class="page-hero-tag">Koleksi Eksklusif</div>
+      <h1 class="page-hero-title">Koleksi <em>Burung</em><br>Terlengkap</h1>
+      <p class="page-hero-desc">Temukan lebih dari 50 spesies burung pilihan, mulai dari burung kicau lokal hingga burung eksotis langka. Semua bersertifikat resmi dan sehat.</p>
+    </div>
+  </div>
+
+  <div style="background:var(--deep);color:var(--cream);padding:24px 60px;display:flex;gap:60px;align-items:center;flex-wrap:wrap">
+    <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--terra)">200+</div><div style="font-size:.72rem;letter-spacing:.1em;opacity:.6;text-transform:uppercase">Spesies</div></div>
+    <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--terra)">100%</div><div style="font-size:.72rem;letter-spacing:.1em;opacity:.6;text-transform:uppercase">Bersertifikat</div></div>
+    <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--terra)">7 Hari</div><div style="font-size:.72rem;letter-spacing:.1em;opacity:.6;text-transform:uppercase">Garansi Kesehatan</div></div>
+    <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--terra)">24/7</div><div style="font-size:.72rem;letter-spacing:.1em;opacity:.6;text-transform:uppercase">Konsultasi</div></div>
+    <div style="margin-left:auto"><button class="btn-light" onclick="document.getElementById('cartBtn').click()">🛒 Lihat Keranjang</button></div>
+  </div>
+
+  <section class="species-section" style="background:var(--warm-white)">
+    <div class="section-label">Semua Spesies</div>
+    <h2 class="section-title">Burung <em style="color:var(--terra);font-style:italic">Pilihan</em> Kami</h2>
+    <div class="species-tabs" id="speciesTabs">
+      <button class="tab active" data-sfilter="all">Semua</button>
+      <button class="tab" data-sfilter="kicau">Burung Kicau</button>
+      <button class="tab" data-sfilter="eksotis">Burung Eksotis</button>
+      <button class="tab" data-sfilter="hias">Burung Hias</button>
+    </div>
+    <div class="species-grid" id="speciesGrid"></div>
+  </section>
+
+  <div class="collection-info">
+    <div class="section-label">Kenapa Memilih Kami</div>
+    <h2 class="section-title">Jaminan <em style="color:var(--terra);font-style:italic">Kualitas</em></h2>
+    <div class="info-cards">
+      <div class="info-card"><div class="info-card-icon">🏥</div><h3 class="info-card-title">Pemeriksaan Kesehatan</h3><p class="info-card-text">Setiap burung menjalani pemeriksaan kesehatan menyeluruh oleh dokter hewan berpengalaman sebelum dijual. Dilengkapi sertifikat kesehatan resmi.</p></div>
+      <div class="info-card"><div class="info-card-icon">📋</div><h3 class="info-card-title">Dokumen Lengkap</h3><p class="info-card-text">Burung dilengkapi dengan dokumen legal, surat asal-usul, dan untuk spesies dilindungi disertai izin BKSDA yang sah sesuai regulasi.</p></div>
+      <div class="info-card"><div class="info-card-icon">🚚</div><h3 class="info-card-title">Pengiriman Aman</h3><p class="info-card-text">Sistem pengiriman khusus hewan hidup dengan kandang transport standar internasional. Tersedia jemput langsung di toko kami.</p></div>
+    </div>
+  </div>
+
+  <div class="bird-care-section">
+    <div class="section-label">Tips untuk Anda</div>
+    <h2 class="section-title">Panduan <em style="color:var(--terra);font-style:italic">Perawatan</em> Singkat</h2>
+    <div class="care-grid">
+      <div class="care-card"><div class="care-icon">🌡️</div><h4 class="care-title">Suhu Ideal</h4><p class="care-text">Jaga suhu kandang antara 20-28°C. Hindari paparan langsung AC atau angin kencang pada burung baru.</p></div>
+      <div class="care-card"><div class="care-icon">🥗</div><h4 class="care-title">Pola Makan</h4><p class="care-text">Berikan pakan 2x sehari. Kombinasikan biji-bijian dengan buah segar dan sayuran untuk nutrisi seimbang.</p></div>
+      <div class="care-card"><div class="care-icon">🚿</div><h4 class="care-title">Kebersihan</h4><p class="care-text">Bersihkan kandang setiap hari. Ganti air minum 2x sehari untuk mencegah pertumbuhan bakteri.</p></div>
+      <div class="care-card"><div class="care-icon">🎵</div><h4 class="care-title">Stimulasi Mental</h4><p class="care-text">Berikan mainan dan interaksi rutin. Putar rekaman kicauan untuk merangsang burung berkicau lebih baik.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== PERLENGKAPAN PAGE =================== -->
+<div class="page" id="page-perlengkapan">
+  <div class="page-hero" style="min-height:340px">
+    <div class="page-hero-bg">
+      <img src="sangkar lovebird.jpeg" alt="Perlengkapan Burung">
+      <div style="position:absolute;inset:5;background:linear-gradient(to right,rgba(232,240,227,.93) 0%,rgba(232,240,227,.6) 60%,transparent 100%)"></div>
+    </div>
+    <div class="page-hero-content">
+      <div class="page-hero-tag">Lengkap &amp; Premium</div>
+      <h1 class="page-hero-title">Perlengkapan<br><em>Terbaik</em> untuk<br>Burung Anda</h1>
+      <p class="page-hero-desc">Dari kandang mewah hingga pakan organik terpilih. Semua kebutuhan sahabat kicau Anda tersedia di sini dengan kualitas terjamin.</p>
+    </div>
+  </div>
+
+  <div class="feature-strip">
+    <div class="feature-strip-grid">
+      <div class="feature-item"><div class="feature-icon">🚚</div><h4 class="feature-title">Gratis Ongkir</h4><p class="feature-text">Min. pembelian Rp 200.000 untuk seluruh Indonesia</p></div>
+      <div class="feature-item"><div class="feature-icon">🔄</div><h4 class="feature-title">Garansi 30 Hari</h4><p class="feature-text">Pengembalian barang jika tidak sesuai deskripsi</p></div>
+      <div class="feature-item"><div class="feature-icon">⭐</div><h4 class="feature-title">Produk Premium</h4><p class="feature-text">Hanya produk berkualitas tinggi yang kami jual</p></div>
+      <div class="feature-item"><div class="feature-icon">💬</div><h4 class="feature-title">Chat 24/7</h4><p class="feature-text">Tim ahli kami siap membantu konsultasi kapan saja</p></div>
+    </div>
+  </div>
+
+  <div style="background:var(--warm-white);padding:40px 60px 20px">
+    <div class="section-label">Semua Produk</div>
+    <h2 class="section-title">Perlengkapan <em style="color:var(--terra);font-style:italic">Pilihan</em></h2>
+    <div class="filter-tabs" id="equipTabs" style="margin-top:20px">
+      <button class="tab active" data-efilter="all">Semua</button>
+      <button class="tab" data-efilter="sangkar">Sangkar</button>
+      <button class="tab" data-efilter="pakan">Pakan</button>
+      <button class="tab" data-efilter="vitamin">Vitamin</button>
+      <button class="tab" data-efilter="aksesoris">Aksesoris</button>
+    </div>
+  </div>
+  <div class="equip-grid" id="equipGrid"></div>
+</div>
+
+<!-- =================== PERAWATAN PAGE =================== -->
+<div class="page" id="page-perawatan">
+  <div class="page-hero" style="min-height:340px">
+    <div class="page-hero-bg">
+      <img src="download (16).jpeg" alt="Perawatan Burung">
+      <div style="position:absolute;inset:5;background:linear-gradient(to right,rgba(227,237,216,.93) 0%,rgba(227,237,216,.6) 60%,transparent 100%)"></div>
+    </div>
+    <div class="page-hero-content">
+      <div class="page-hero-tag">Panduan Lengkap</div>
+      <h1 class="page-hero-title">Panduan<br><em>Perawatan</em><br>Burung</h1>
+      <p class="page-hero-desc">Pelajari cara merawat burung kesayangan Anda dengan benar. Panduan lengkap dari pakar burung berpengalaman untuk menjaga kesehatan dan kebahagiaan sahabat berbulu Anda.</p>
+    </div>
+  </div>
+
+  <div class="care-intro">
+    <div class="section-label">Pengantar</div>
+    <h2 class="section-title">Mengapa Perawatan <em style="color:var(--terra);font-style:italic">Penting?</em></h2>
+    <div class="care-intro-grid">
+      <div class="care-intro-text">
+        <p>Burung adalah makhluk hidup yang sensitif dan membutuhkan perhatian khusus. Perawatan yang tepat bukan hanya menjaga kesehatan fisik, tetapi juga kesehatan mental burung Anda.</p>
+        <p>Burung yang dirawat dengan baik akan lebih aktif, memiliki kicauan yang merdu, bulu yang mengkilap, dan masa hidup yang lebih panjang. Sebaliknya, perawatan yang buruk dapat menyebabkan stres, penyakit, dan bahkan kematian dini.</p>
+        <p>Di halaman ini, kami menyajikan panduan komprehensif yang disusun oleh dokter hewan dan pakar burung berpengalaman, mencakup jadwal perawatan harian, tips nutrisi, hingga cara menangani penyakit umum.</p>
+        <div style="margin-top:24px"><button class="btn-primary" onclick="navigateTo('perlengkapan')">Beli Perlengkapan Perawatan</button></div>
+      </div>
+      <div class="care-intro-visual">
+        <img src="rawat burung.jpeg" alt="Burung Lovebird">
+      </div>
+    </div>
+  </div>
+
+  <div class="care-tips">
+    <div class="section-label">Tips Utama</div>
+    <h2 class="section-title">10 Tips <em style="color:var(--terra);font-style:italic">Perawatan</em> Burung</h2>
+    <div class="tips-grid">
+      <div class="tip-card"><div class="tip-num">01</div><h3 class="tip-title">Pilih Kandang yang Tepat</h3><p class="tip-text">Kandang harus cukup luas agar burung dapat merentangkan sayap dengan bebas. Ukuran minimum: 2x lebar rentang sayap. Material stainless atau galvanis anti karat adalah pilihan terbaik untuk ketahanan jangka panjang.</p></div>
+      <div class="tip-card"><div class="tip-num">02</div><h3 class="tip-title">Nutrisi Seimbang</h3><p class="tip-text">Berikan kombinasi biji-bijian, buah segar, sayuran, dan protein. Jangan berikan makanan manusia seperti garam, gula, atau makanan berlemak. Pakan khusus burung lebih baik dari campuran sendiri.</p></div>
+      <div class="tip-card"><div class="tip-num">03</div><h3 class="tip-title">Air Bersih Setiap Hari</h3><p class="tip-text">Ganti air minum 2x sehari minimum. Air kotor adalah sumber utama penyakit pada burung. Gunakan tempat minum yang mudah dibersihkan dan bersihkan dengan sabun setiap hari.</p></div>
+      <div class="tip-card"><div class="tip-num">04</div><h3 class="tip-title">Mandi Rutin</h3><p class="tip-text">Sebagian besar burung perlu mandi 2-3 kali seminggu. Sediakan wadah mandi dangkal atau semprotkan dengan air bersih. Mandi membantu menjaga kebersihan bulu dan kulit burung.</p></div>
+      <div class="tip-card"><div class="tip-num">05</div><h3 class="tip-title">Penjemuran Pagi</h3><p class="tip-text">Jemur burung 1-2 jam setiap pagi (07.00-09.00 WIB). Sinar matahari pagi mengandung UV yang membantu sintesis vitamin D3 untuk tulang yang kuat dan bulu sehat.</p></div>
+      <div class="tip-card"><div class="tip-num">06</div><h3 class="tip-title">Kebersihan Kandang</h3><p class="tip-text">Bersihkan kotoran setiap hari, cuci kandang dengan disinfektan seminggu sekali. Lingkungan bersih mencegah penyebaran bakteri, jamur, dan parasit yang dapat menyebabkan penyakit.</p></div>
+      <div class="tip-card"><div class="tip-num">07</div><h3 class="tip-title">Interaksi Sosial</h3><p class="tip-text">Luangkan waktu 15-30 menit sehari untuk berinteraksi dengan burung. Berbicara, menyanyikan lagu, atau sekadar duduk dekat kandang membantu burung merasa aman dan tidak stres.</p></div>
+      <div class="tip-card"><div class="tip-num">08</div><h3 class="tip-title">Kontrol Suhu</h3><p class="tip-text">Jaga suhu antara 20-28°C. Hindari draft angin langsung dan perubahan suhu drastis. Pada malam hari, tutup sebagian kandang dengan kain untuk menjaga kehangatan.</p></div>
+      <div class="tip-card"><div class="tip-num">09</div><h3 class="tip-title">Vitamin &amp; Suplemen</h3><p class="tip-text">Berikan suplemen vitamin seminggu 2-3 kali, bukan setiap hari agar tidak overdosis. Konsultasikan dengan dokter hewan untuk jenis suplemen yang tepat sesuai spesies burung Anda.</p></div>
+      <div class="tip-card"><div class="tip-num">10</div><h3 class="tip-title">Pemeriksaan Rutin</h3><p class="tip-text">Bawa ke dokter hewan minimal 6 bulan sekali untuk check-up. Kenali tanda-tanda sakit: bulu kusam, tidak mau makan, sering tidur, atau perubahan kotoran. Deteksi dini sangat penting.</p></div>
+    </div>
+  </div>
+
+  <div class="care-schedule">
+    <div class="section-label">Jadwal Rutin</div>
+    <h2 class="section-title">Jadwal <em style="color:var(--terra);font-style:italic">Perawatan</em> Harian</h2>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th style="width:25%">Aktivitas</th>
+          <th style="width:20%">Frekuensi</th>
+          <th style="width:35%">Cara</th>
+          <th style="width:20%">Manfaat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Ganti air minum</td><td><span class="badge-freq badge-daily">Setiap Hari (2x)</span></td><td>Gunakan air matang suhu ruang, cuci tempat minum tiap hari</td><td>Mencegah bakteri &amp; penyakit</td></tr>
+        <tr><td>Beri pakan utama</td><td><span class="badge-freq badge-daily">Setiap Hari (2x)</span></td><td>Pagi &amp; sore, porsi secukupnya agar tidak basi</td><td>Nutrisi optimal</td></tr>
+        <tr><td>Bersihkan kotoran</td><td><span class="badge-freq badge-daily">Setiap Hari</span></td><td>Alas kandang diganti atau dibersihkan dari kotoran</td><td>Higienitas kandang</td></tr>
+        <tr><td>Penjemuran</td><td><span class="badge-freq badge-daily">Setiap Hari</span></td><td>07:00–09:00, 1–2 jam, hindari siang hari</td><td>Vitamin D3, bulu sehat</td></tr>
+        <tr><td>Mandi burung</td><td><span class="badge-freq badge-weekly">3x Seminggu</span></td><td>Sediakan bak mandi dangkal atau semprot ringan</td><td>Kebersihan bulu</td></tr>
+        <tr><td>Cuci kandang</td><td><span class="badge-freq badge-weekly">1x Seminggu</span></td><td>Cuci dengan air sabun, bilas bersih, keringkan</td><td>Bebas parasit</td></tr>
+        <tr><td>Pemberian vitamin</td><td><span class="badge-freq badge-weekly">2x Seminggu</span></td><td>Teteskan ke air minum sesuai dosis anjuran</td><td>Imunitas &amp; stamina</td></tr>
+        <tr><td>Potong kuku &amp; paruh</td><td><span class="badge-freq badge-monthly">1x Sebulan</span></td><td>Gunakan gunting khusus, hati-hati jangan sampai berdarah</td><td>Kenyamanan burung</td></tr>
+        <tr><td>Check-up dokter hewan</td><td><span class="badge-freq badge-monthly">Setiap 6 Bulan</span></td><td>Bawa ke klinik hewan terpercaya untuk pemeriksaan menyeluruh</td><td>Deteksi dini penyakit</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+  <!-- ARTIKEL TIPS (dari Blog) -->
+  <div class="care-articles">
+    <div class="section-label">Artikel &amp; Tips</div>
+    <h2 class="section-title">Bacaan <em style="color:var(--terra);font-style:italic">Perawatan</em> Burung</h2>
+    <div class="blog-featured-grid">
+      <div class="blog-featured-card">
+        <div class="blog-card-img"><img src="kandang.jpeg" alt="Lovebird"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Perawatan</div>
+          <h3 class="blog-card-title">Panduan Lengkap Merawat Lovebird untuk Pemula: Dari Memilih hingga Melatih Kicau</h3>
+          <p class="blog-card-excerpt">Lovebird adalah salah satu burung paling populer di Indonesia. Warnanya yang cantik dan sifatnya yang aktif membuatnya menjadi pilihan sempurna untuk burung peliharaan pertama Anda. Simak panduan lengkapnya di sini...</p>
+          <div class="blog-card-meta"><span>&#128197; 15 Desember 2024</span><span>&#128065;&#65039; 12.4K views</span><span>&#9201;&#65039; 8 menit baca</span></div>
+        </div>
+      </div>
+      <div class="blog-sidebar">
+        <div class="blog-sidebar-card">
+          <div class="blog-card-img small"><img src="eksotis.jpeg" alt="Burung Eksotis"></div>
+          <div class="blog-card-body">
+            <div class="blog-tag" style="font-size:.58rem;padding:3px 8px">Eksotis</div>
+            <h4 class="blog-card-title small">5 Burung Eksotis Legal yang Bisa Dipelihara di Indonesia</h4>
+            <div class="blog-card-meta"><span>&#128197; 10 Des 2024</span> <span>&#9201;&#65039; 5 mnt</span></div>
+          </div>
+        </div>
+        <div class="blog-sidebar-card">
+          <div class="blog-card-img small"><img src="nutrisi burung.jpeg" alt="Nutrisi Burung"></div>
+          <div class="blog-card-body">
+            <div class="blog-tag" style="font-size:.58rem;padding:3px 8px;background:var(--sage-dark)">Nutrisi</div>
+            <h4 class="blog-card-title small">Diet Sehat untuk Burung Kicau: Panduan Nutrisi Lengkap</h4>
+            <div class="blog-card-meta"><span>&#128197; 5 Des 2024</span> <span>&#9201;&#65039; 6 mnt</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blog-all-grid" style="margin-top:32px">
+      <div class="blog-all-card"><div class="blog-all-img"><img src="sangkar lovebird.jpeg" alt="Kandang Burung"></div><div class="blog-all-body"><div class="blog-tag" style="font-size:.6rem;padding:3px 8px;background:var(--gold)">Kandang</div><h4 class="blog-all-title">Cara Memilih Kandang yang Tepat Sesuai Jenis Burung</h4><p class="blog-all-excerpt">Kandang yang salah bisa membuat burung stres. Pelajari cara memilih ukuran, material, dan desain kandang yang ideal...</p><div class="blog-all-meta">&#128197; 2 Des 2024 &bull; &#9201;&#65039; 4 menit baca</div></div></div>
+      <div class="blog-all-card"><div class="blog-all-img"><img src="kesehatan bururng.jpeg" alt="Kesehatan Burung"></div><div class="blog-all-body"><div class="blog-tag" style="font-size:.6rem;padding:3px 8px;background:var(--sage-dark)">Kesehatan</div><h4 class="blog-all-title">Mengenali dan Menangani 10 Penyakit Umum pada Burung</h4><p class="blog-all-excerpt">Deteksi dini penyakit pada burung sangat penting. Kenali gejala, penyebab, dan cara penanganan penyakit yang sering menyerang...</p><div class="blog-all-meta">&#128197; 28 Nov 2024 &bull; &#9201;&#65039; 10 menit baca</div></div></div>
+      <div class="blog-all-card"><div class="blog-all-img"><img src="luvebird hijau.jpeg" alt="Burung Kicau"></div><div class="blog-all-body"><div class="blog-tag" style="font-size:.6rem;padding:3px 8px">Kicau</div><h4 class="blog-all-title">Teknik Memaster Burung Kicau agar Cepat Gacor</h4><p class="blog-all-excerpt">Rahasia burung kicau berkualitas lomba ada pada teknik pemasteran. Simak metode efektif yang digunakan para juara...</p><div class="blog-all-meta">&#128197; 22 Nov 2024 &bull; &#9201;&#65039; 7 menit baca</div></div></div>
+      <div class="blog-all-card"><div class="blog-all-img"><img src="Canary.jpeg" alt="Breeding Kenari"></div><div class="blog-all-body"><div class="blog-tag" style="font-size:.6rem;padding:3px 8px;background:#8a6e3e;color:white">Breeding</div><h4 class="blog-all-title">Panduan Breeding Kenari Yorkshire untuk Pemula</h4><p class="blog-all-excerpt">Breeding kenari Yorkshire bisa menghasilkan keuntungan yang menarik. Mulai dari persiapan kandang, pemilihan indukan, hingga merawat anakan...</p><div class="blog-all-meta">&#128197; 18 Nov 2024 &bull; &#9201;&#65039; 12 menit baca</div></div></div>
+      <div class="blog-all-card"><div class="blog-all-img"><img src="herbal bururng.jpeg" alt="Herbal Burung"></div><div class="blog-all-body"><div class="blog-tag" style="font-size:.6rem;padding:3px 8px;background:var(--sage-dark)">Herbal</div><h4 class="blog-all-title">Manfaat Herbal Alami untuk Meningkatkan Stamina Burung</h4><p class="blog-all-excerpt">Temulawak, jahe, dan madu ternyata sangat bermanfaat untuk kesehatan burung. Pelajari cara penggunaannya yang aman dan efektif...</p><div class="blog-all-meta">&#128197; 12 Nov 2024 &bull; &#9201;&#65039; 5 menit baca</div></div></div>
+      <div class="blog-all-card"><div class="blog-all-img"><img src="lomba bururng.jpeg" alt="Lomba Burung"></div><div class="blog-all-body"><div class="blog-tag" style="font-size:.6rem;padding:3px 8px;background:var(--gold)">Lomba</div><h4 class="blog-all-title">Tips Persiapan Burung Menjelang Perlombaan</h4><p class="blog-all-excerpt">Persiapan yang matang adalah kunci sukses di arena lomba. Mulai dari H-7 hingga hari H, begini cara mempersiapkan burung agar tampil prima...</p><div class="blog-all-meta">&#128197; 8 Nov 2024 &bull; &#9201;&#65039; 8 menit baca</div></div></div>
+    </div>
+    <div class="blog-topics" style="margin-top:40px">
+      <div class="section-label">Jelajahi Topik</div>
+      <h2 class="section-title">Topik <em style="color:var(--terra);font-style:italic">Populer</em></h2>
+      <div class="topics-grid">
+        <div class="topic-pill"><div class="topic-pill-img"><img src="lovebird mix.jpeg" alt="Lovebird"></div><div class="topic-pill-name">Lovebird</div></div>
+        <div class="topic-pill"><div class="topic-pill-img"><img src="Top Canary.jpeg" alt="Kenari"></div><div class="topic-pill-name">Kenari</div></div>
+        <div class="topic-pill"><div class="topic-pill-img"><img src="batu.jpeg" alt="Murai Batu"></div><div class="topic-pill-name">Murai Batu</div></div>
+        <div class="topic-pill"><div class="topic-pill-img"><img src="nutrisi burung.jpeg" alt="Nutrisi"></div><div class="topic-pill-name">Nutrisi</div></div>
+        <div class="topic-pill"><div class="topic-pill-img"><img src="herbal bururng.jpeg" alt="Kesehatan"></div><div class="topic-pill-name">Kesehatan</div></div>
+        <div class="topic-pill"><div class="topic-pill-img"><img src="BnR ppc.png" alt="Kandang"></div><div class="topic-pill-name">Kandang</div></div>
+        <div class="topic-pill"><div class="topic-pill-img"><img src="breeding.jpeg" alt="Breeding"></div><div class="topic-pill-name">Breeding</div></div>
+        <div class="topic-pill"><div class="topic-pill-img"><img src="kicau.jpeg" alt="Kicau"></div><div class="topic-pill-name">Kicau</div></div>
+        <div class="topic-pill"><div class="topic-pill-img"><img src="lomba.jpeg" alt="Lomba"></div><div class="topic-pill-name">Lomba</div></div>
+        <div class="topic-pill"><div class="topic-pill-img"><img src="pakan biji burung.jpeg" alt="Herbal"></div><div class="topic-pill-name">Herbal</div></div>
+      </div>
+    </div>
+  </div>
+
+<div class="care-faq">
+    <div class="section-label">Pertanyaan Umum</div>
+    <h2 class="section-title">FAQ <em style="color:var(--terra);font-style:italic">Perawatan</em></h2>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item "><div class="faq-q">Mengapa burung saya tidak mau makan? <span class="faq-icon">+</span></div><div class="faq-a"><p>Ada beberapa penyebab burung tidak mau makan: stres akibat perpindahan tempat, perubahan jenis pakan secara mendadak, kondisi sakit, atau cuaca terlalu dingin. Coba kembalikan ke pakan asal dan pastikan suhu kandang hangat. Jika lebih dari 2 hari tidak makan, segera konsultasikan ke dokter hewan.</p></div></div>
+      <div class="faq-item "><div class="faq-q">Seberapa sering burung harus dijemur? <span class="faq-icon">+</span></div><div class="faq-a"><p>Idealnya setiap hari selama 1-2 jam di pagi hari antara pukul 07.00-09.00. Sinar matahari pagi mengandung UVB yang membantu produksi vitamin D3. Hindari penjemuran saat matahari sudah tinggi karena bisa menyebabkan heat stroke.</p></div></div>
+      <div class="faq-item "><div class="faq-q">Apa tanda-tanda burung sedang sakit? <span class="faq-icon">+</span></div><div class="faq-a"><p>Tanda-tanda umum: bulu mengembang atau kusam, sering tidur di siang hari, tidak nafsu makan, perubahan pada kotoran (terlalu cair/berlendir), mata sayu atau berair, keseimbangan terganggu, dan penurunan berat badan. Jika melihat tanda-tanda ini, segera konsultasikan ke dokter hewan.</p></div></div>
+      <div class="faq-item "><div class="faq-q">Bolehkah memberikan buah-buahan setiap hari? <span class="faq-icon">+</span></div><div class="faq-a"><p>Buah-buahan bisa diberikan setiap hari dalam jumlah sedang (sekitar 10-20% dari total pakan). Buah yang baik: apel, pir, pepaya, pisang (tidak terlalu matang). Hindari: alpukat (beracun untuk burung), buah yang terlalu manis atau asam dalam jumlah besar.</p></div></div>
+      <div class="faq-item "><div class="faq-q">Bagaimana cara menjinak burung baru? <span class="faq-icon">+</span></div><div class="faq-a"><p>Proses penjinakan membutuhkan kesabaran, biasanya 2-4 minggu. Mulai dengan menempatkan kandang di tempat yang sering Anda berada, berbicara pelan tanpa gerakan mendadak, lalu secara bertahap dekatkan tangan. Berikan camilan favorit sebagai reward saat burung mau didekati.</p></div></div>
+      <div class="faq-item "><div class="faq-q">Apakah burung perlu teman/pasangan? <span class="faq-icon">+</span></div><div class="faq-a"><p>Tergantung spesies. Burung sosial seperti lovebird, parkit, dan finch lebih bahagia dengan pasangan. Burung kicau seperti murai dan kacer justri lebih baik dipelihara sendiri agar fokus berkicau. Interaksi rutin dengan pemilik juga bisa menggantikan kebutuhan sosial burung.</p></div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- =================== ULASAN PAGE =================== -->
+<div id="page-ulasan" class="page">
+  <div class="ulasan-page-wrap">
+    <!-- LEFT: Daftar Ulasan -->
+    <div class="ulasan-left">
+      <div class="ulasan-page-header">
+        <div class="ulasan-page-label">ULASAN PELANGGAN</div>
+        <h1 class="ulasan-page-title">Ulasan untuk Toko <em>Chirp &amp; Plume</em></h1>
+        <p class="ulasan-page-sub">Lihat pengalaman pelanggan lain dan bagikan pengalamanmu juga ✨</p>
+        <div class="ulasan-count-bar">
+          <span class="ulasan-count-icon">💬</span>
+          <span id="ulasanCountText">128 ulasan</span>
+        </div>
+      </div>
+
+      <!-- Scroll control bar -->
+      <div class="ulasan-scroll-ctrl">
+        <div class="ulasan-live-badge">
+          <div class="ulasan-live-dot"></div>
+          Live Feed
+        </div>
+        <button class="ulasan-pause-btn" id="btnPauseScroll">&#9646;&#9646; Pause</button>
+      </div>
+
+      <!-- Feed wrapper dengan efek scroll TikTok -->
+      <div class="ulasan-feed-wrapper" id="feedWrapper">
+        <div id="feedUlasan" class="ulasan-feed"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form Bagikan Pengalaman -->
+    <div class="ulasan-right">
+      <div class="ulasan-form-card">
+        <h3 class="ulasan-form-title">Bagikan Pengalamanmu</h3>
+        <p class="ulasan-form-sub">Tulis ulasan untuk toko kami</p>
+
+        <!-- Avatar Upload -->
+        <div class="ulasan-avatar-upload" id="avatarUploadZone">
+          <div class="ulasan-avatar-preview" id="avatarPreview">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="16" r="9" fill="#b0b0b0"/>
+              <path d="M4 40c0-9.941 8.059-18 18-18s18 8.059 18 18" fill="#b0b0b0"/>
+            </svg>
+          </div>
+          <div class="ulasan-avatar-cam">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/><path d="M9 3L7.17 5H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2h-3.17L15 3H9zm3 14a5 5 0 110-10 5 5 0 010 10z"/></svg>
+          </div>
+          <input type="file" id="avatarInput" accept="image/*" style="display:none">
+          <img id="avatarImg" src="" alt="" style="display:none; width:100%; height:100%; object-fit:cover; border-radius:50%; position:absolute; top:0; left:0;">
+        </div>
+
+        <input type="text" id="namaPengulas" class="ulasan-input" placeholder="Nama Anda" maxlength="60">
+        <input type="text" id="kotaPengulas" class="ulasan-input" placeholder="Kota Anda (opsional)" maxlength="40">
+
+        <div class="ulasan-rating-label">Rating</div>
+        <div class="ulasan-stars-input" id="inputStars">
+          <span class="ustar" data-value="1">☆</span>
+          <span class="ustar" data-value="2">☆</span>
+          <span class="ustar" data-value="3">☆</span>
+          <span class="ustar" data-value="4">☆</span>
+          <span class="ustar" data-value="5">☆</span>
+        </div>
+
+        <textarea id="teksUlasan" class="ulasan-textarea" placeholder="Tulis ulasan Anda di sini..." maxlength="500"></textarea>
+        <div class="ulasan-char-count"><span id="charCount">0</span> / 500 karakter</div>
+
+        <button id="btnKirimUlasan" class="btn-kirim-ulasan">
+          Kirim Ulasan <svg width="16" height="16" viewBox="0 0 24 24" fill="white" style="vertical-align:middle;margin-left:4px"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+        </button>
+
+        <div class="ulasan-privacy-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#888"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          Ulasan Anda akan ditampilkan secara publik
+        </div>
+      </div>
+
+      <!-- Thank you note -->
+      <div class="ulasan-thankyou-card">
+        <div class="ulasan-thankyou-heart">❤️</div>
+        <p>Terima kasih untuk semua pelanggan yang sudah mempercayakan Chirp &amp; Plume. Kami akan terus memberikan yang terbaik!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- =================== CART SIDEBAR =================== -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3 class="cart-title">Keranjang Belanja</h3>
+    <button class="cart-close" id="cartClose">×</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Keranjang belanja kosong</p></div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">Rp 0</span></div>
+    <div class="cart-total"><span>Total</span><span class="cart-total-price" id="cartTotal">Rp 0</span></div>
+    <button class="btn-checkout" id="btnCheckout" disabled="">Checkout</button>
+  </div>
+</div>
+
+<!-- =================== PRODUCT DETAIL MODAL =================== -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal">
+    <button class="modal-close" id="productModalClose">×</button>
+    <div class="product-detail" id="productDetail"></div>
+  </div>
+</div>
+
+<!-- =================== CHECKOUT MODAL =================== -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal checkout-modal">
+    <button class="modal-close" id="checkoutModalClose">×</button>
+    <h2 class="checkout-title">Checkout</h2>
+    <p class="checkout-subtitle">Lengkapi data pengiriman dan pembayaran Anda</p>
+    <form id="checkoutForm">
+      <div class="checkout-section">
+        <div class="checkout-section-title">Informasi Pengiriman</div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">Nama Lengkap *</label><input type="text" class="form-input" id="customerName" required=""></div>
+          <div class="form-group"><label class="form-label">No. Telepon *</label><input type="tel" class="form-input" id="customerPhone" required=""></div>
+        </div>
+        <div class="form-row full"><div class="form-group"><label class="form-label">Email *</label><input type="email" class="form-input" id="customerEmail" required=""></div></div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">Provinsi *</label>
+            <select class="form-select" id="province" required="">
+              <option value="">Pilih Provinsi</option>
+              <option>DKI Jakarta</option><option>Jawa Barat</option><option>Jawa Tengah</option><option>Jawa Timur</option>
+              <option>Banten</option><option>Bali</option><option>Sumatera Utara</option><option>Sumatera Selatan</option>
+              <option>Sulawesi Selatan</option><option>Kalimantan Barat</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Kota *</label><input type="text" class="form-input" id="city" required=""></div>
+        </div>
+        <div class="form-row full"><div class="form-group"><label class="form-label">Alamat Lengkap *</label><textarea class="form-textarea" id="address" required="" placeholder="Nama jalan, nomor rumah, RT/RW, kelurahan, kecamatan"></textarea></div></div>
+        <div class="form-row full"><div class="form-group"><label class="form-label">Catatan (opsional)</label><input type="text" class="form-input" id="notes" placeholder="Patokan, instruksi khusus, dll"></div></div>
+      </div>
+      <div class="checkout-section">
+        <div class="checkout-section-title">Metode Pembayaran</div>
+        <div class="payment-options">
+          <label class="payment-option selected"><input type="radio" name="payment" value="transfer" checked=""><div class="payment-radio"></div><span class="payment-icon">🏦</span><div class="payment-info"><div class="payment-name">Transfer Bank</div><div class="payment-desc">BCA, Mandiri, BNI, BRI</div></div></label>
+          <label class="payment-option"><input type="radio" name="payment" value="ewallet"><div class="payment-radio"></div><span class="payment-icon">📱</span><div class="payment-info"><div class="payment-name">E-Wallet</div><div class="payment-desc">GoPay, OVO, DANA, ShopeePay</div></div></label>
+          <label class="payment-option"><input type="radio" name="payment" value="cod"><div class="payment-radio"></div><span class="payment-icon">💰</span><div class="payment-info"><div class="payment-name">COD (Bayar di Tempat)</div><div class="payment-desc">Khusus area Palembang &amp; sekitarnya</div></div></label>
+        </div>
+        <div id="paymentDetails"></div>
+      </div>
+      <div class="checkout-summary" id="checkoutSummary"></div>
+      <button type="submit" class="btn-place-order">Buat Pesanan →</button>
+    </form>
+  </div>
+</div>
+
+<!-- =================== RECEIPT MODAL =================== -->
+<div class="modal-overlay" id="receiptModal">
+  <div class="modal receipt-modal">
+    <button class="modal-close" id="receiptModalClose">×</button>
+    <div class="receipt-container" id="receiptContent"></div>
+    <div class="receipt-actions">
+      <button class="btn-download-pdf" id="btnDownloadPdf">📄 Download PDF</button>
+      <button class="btn-print" id="btnPrint">🖨️ Cetak</button>
+    </div>
+    <button class="btn-continue-shopping" id="btnContinueShopping">← Lanjut Belanja</button>
+  </div>
+</div>
+
+<!-- =================== TOAST =================== -->
+<div class="toast" id="toast">
+  <span class="toast-icon">✓</span>
+  <span id="toastMessage">Produk ditambahkan ke keranjang</span>
+</div>
+
+<script src="script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body></html>

@@ -1,0 +1,919 @@
+
+/* ============================================================
+   CHIRP & PLUME — style.css
+   ============================================================ */
+ 
+*,::before,::after{margin:0;padding:0;box-sizing:border-box}
+ 
+:root{
+  --sage:#8a9e7e;
+  --sage-light:#b5c9a8;
+  --sage-dark:#5c7250;
+  --cream:#f5f0e8;
+  --warm-white:#faf8f3;
+  --terra:#c4845a;
+  --terra-light:#e0b08a;
+  --deep:#2e3528;
+  --mist:#dde8d5;
+  --gold:#c9a84c;
+  --danger:#e74c3c;
+  --success:#27ae60;
+}
+ 
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--deep);overflow-x:hidden}
+ 
+/* --- IMG HELPERS --- */
+.img-cover{width:100%;height:100%;object-fit:cover;display:block}
+.img-contain{width:100%;height:100%;object-fit:contain;display:block}
+.img-wrap{overflow:hidden;position:relative}
+.img-wrap img{transition:transform .5s ease}
+.img-wrap:hover img{transform:scale(1.06)}
+ 
+/* =================== NAV =================== */
+nav{position:fixed;top:0;width:100%;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px 60px;background:rgba(250,248,243,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(138,158,126,.15);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 30px rgba(46,53,40,.08)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;letter-spacing:.02em;color:var(--deep);text-decoration:none;cursor:pointer}
+.nav-logo span{color:var(--terra);font-style:italic}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links li a{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--deep);text-decoration:none;font-weight:400;opacity:.7;transition:opacity .2s,color .2s;cursor:pointer;position:relative;padding-bottom:4px}
+.nav-links li a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--terra);transition:width .3s}
+.nav-links li a:hover{opacity:1}
+.nav-links li a:hover::after,.nav-links li a.active::after{width:100%}
+.nav-links li a.active{opacity:1;color:var(--terra)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-cart{display:flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.1em;color:var(--deep);cursor:pointer;opacity:.8;transition:opacity .2s;position:relative}
+.nav-cart:hover{opacity:1}
+.cart-count{background:var(--terra);color:white;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:500;position:absolute;top:-8px;right:-8px}
+.cart-icon{font-size:1.3rem}
+ 
+/* =================== PAGE SYSTEM =================== */
+.page{display:none;min-height:100vh;padding-top:70px}
+.page.active{display:block}
+ 
+/* =================== HOME — HERO =================== */
+.hero{min-height:calc(100vh - 70px);display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 60px}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:32px}
+.hero-tag::before{content:'';display:block;width:40px;height:1px;background:var(--sage)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);font-weight:300;line-height:1.05;margin-bottom:28px}
+.hero-title em{font-style:italic;color:var(--terra);display:block}
+.hero-desc{font-size:.9rem;line-height:1.8;color:rgba(46,53,40,.65);max-width:380px;margin-bottom:48px;font-weight:300}
+.hero-cta{display:flex;gap:20px;align-items:center}
+ 
+.btn-primary{background:var(--deep);color:var(--cream);padding:14px 36px;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;border:none;cursor:pointer;transition:background .3s,transform .2s}
+.btn-primary:hover{background:var(--sage-dark);transform:translateY(-2px)}
+.btn-ghost{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--deep);text-decoration:none;border-bottom:1px solid var(--sage);padding-bottom:2px;transition:color .2s,border-color .2s;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none}
+.btn-ghost:hover{color:var(--terra);border-color:var(--terra)}
+ 
+.hero-stats{display:flex;gap:40px;margin-top:60px;padding-top:40px;border-top:1px solid rgba(138,158,126,.25)}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--terra)}
+.stat-label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+ 
+.hero-right{position:relative;overflow:hidden}
+.hero-video{width:100%;height:850px;object-fit:cover;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.3),transparent);}
+.hero-badge{position:absolute;top:40px;right:40px;background:var(--cream);border:1px solid var(--gold);border-radius:50%;width:96px;height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:center;line-height:1.4;animation:spin-slow 20s linear infinite}
+@keyframes spin-slow{to{transform:rotate(360deg)}}
+ 
+/* =================== MARQUEE =================== */
+.marquee-bar{background:var(--deep);color:var(--cream);padding:14px 0;overflow:hidden}
+.marquee-track{display:flex;gap:0;white-space:nowrap;animation:marquee 25s linear infinite}
+.marquee-item{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;padding:0 40px;opacity:.8}
+.marquee-dot{color:var(--terra)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+ 
+/* =================== SHARED SECTION STYLES =================== */
+.section-label{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.section-label::after{content:'';flex:0 0 30px;height:1px;background:var(--sage)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.15;margin-bottom:16px}
+ 
+/* =================== CATEGORIES =================== */
+.categories{background:var(--cream);padding:100px 60px}
+.cat-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.cat-card{background:var(--warm-white);border:1px solid rgba(138,158,126,.2);cursor:pointer;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.cat-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .35s ease;z-index:2}
+.cat-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(46,53,40,.1)}
+.cat-card:hover::before{transform:scaleX(1)}
+.cat-card-img-wrap{width:100%;height:160px;overflow:hidden}
+.cat-card-img-wrap img{width:100%;height:100%;object-fit:cover;object-position: 50% 50%;transition:transform .5s ease}
+.cat-card:hover .cat-card-img-wrap img{transform:scale(1.08)}
+.cat-card-body{padding:24px 28px}
+.cat-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:8px}
+.cat-count{font-size:.72rem;letter-spacing:.1em;color:rgba(46,53,40,.5)}
+.cat-arrow{position:absolute;bottom:24px;right:28px;font-size:1.2rem;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s;color:var(--terra)}
+.cat-card:hover .cat-arrow{opacity:1;transform:translateX(0)}
+ 
+/* =================== FEATURED PRODUCTS =================== */
+.featured{background:var(--warm-white);padding:100px 60px}
+.prod-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
+.filter-tabs{display:flex;gap:4px}
+.tab{padding:8px 20px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(138,158,126,.3);background:transparent;cursor:pointer;transition:all .2s;color:var(--deep);font-family:'Jost',sans-serif}
+.tab.active{background:var(--deep);color:var(--cream);border-color:var(--deep)}
+.tab:hover:not(.active){border-color:var(--sage)}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.prod-card{cursor:pointer}
+.prod-img{background:var(--mist);aspect-ratio:4/3;position:relative;overflow:hidden;margin-bottom:20px;transition:transform .4s}
+.prod-img img{ width:100%; height:100%; object-fit:cover;object-position: center; transition:transform .5s ease}
+.prod-card:hover .prod-img img{transform:scale(1.06)}
+.prod-badge{position:absolute;top:14px;left:14px;z-index:1;background:var(--terra);color:white;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px}
+.prod-wishlist{position:absolute;top:14px;right:14px;z-index:1;font-size:1.4rem;opacity:0;transition:opacity .3s,transform .2s;cursor:pointer}
+.prod-wishlist:hover{transform:scale(1.2)}
+.prod-card:hover .prod-wishlist{opacity:1}
+.prod-meta{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:8px}
+.prod-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;margin-bottom:10px}
+.prod-footer{display:flex;justify-content:space-between;align-items:center}
+.prod-price{font-size:1rem;font-weight:500;color:var(--deep)}
+.prod-price span{font-size:.75rem;text-decoration:line-through;color:rgba(46,53,40,.4);margin-right:6px}
+.add-btn{width:36px;height:36px;border:1px solid var(--deep);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;transition:all .2s;color:var(--deep)}
+.add-btn:hover{background:var(--deep);color:var(--cream)}
+.prod-rating{font-size:.75rem;color:var(--gold);margin-bottom:4px}
+.prod-rating span{color:rgba(46,53,40,.5);margin-left:4px}
+ 
+/* =================== BANNER =================== */
+.banner{background:var(--deep);color:var(--cream);display:grid;grid-template-columns:1fr 1fr;min-height:480px;overflow:hidden}
+.banner-left{padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
+.banner-tag{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--terra-light);margin-bottom:20px}
+.banner-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3rem);font-weight:300;line-height:1.2;margin-bottom:20px}
+.banner-title em{color:var(--gold);font-style:italic}
+.banner-text{font-size:.88rem;line-height:1.8;opacity:.65;margin-bottom:36px;font-weight:300}
+.btn-light{background:var(--cream);color:var(--deep);padding:14px 36px;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;border:none;cursor:pointer;font-family:'Jost',sans-serif;transition:background .3s}
+.btn-light:hover{background:var(--terra-light)}
+.banner-right{position:relative;overflow:hidden}
+.banner-right img{width:100%;height:100%;object-fit:cover;opacity:.85}
+.banner-right-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(46,53,40,.4),transparent)}
+ 
+/* =================== TESTIMONIALS =================== */
+.testimonials{background:var(--cream);padding:100px 60px}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.test-card{background:var(--warm-white);padding:36px 32px;border:1px solid rgba(138,158,126,.15)}
+.test-quote{font-family:'Cormorant Garamond',serif;font-size:4rem;line-height:1;color:var(--sage-light);margin-bottom:16px}
+.test-text{font-size:.88rem;line-height:1.8;font-weight:300;margin-bottom:24px;font-style:italic}
+.test-stars{color:var(--gold);letter-spacing:2px;font-size:.8rem;margin-bottom:16px}
+.test-author{display:flex;align-items:center;gap:12px}
+.test-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.test-name{font-size:.82rem;font-weight:500}
+.test-info{font-size:.7rem;color:rgba(46,53,40,.5)}
+ 
+/* =================== NEWSLETTER =================== */
+.newsletter{background:var(--sage);color:var(--deep);text-align:center;padding:80px 60px}
+.newsletter-sub{font-size:.9rem;opacity:.75;margin-bottom:40px;font-weight:300}
+.newsletter-form{display:flex;max-width:460px;margin:0 auto}
+.newsletter-input{flex:1;padding:14px 20px;border:none;background:rgba(255,255,255,.85);font-family:'Jost',sans-serif;font-size:.85rem;outline:none;color:var(--deep)}
+.newsletter-btn{background:var(--deep);color:var(--cream);padding:14px 28px;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;transition:background .2s}
+.newsletter-btn:hover{background:var(--terra)}
+ 
+/* =================== FOOTER =================== */
+footer{background:var(--deep);color:rgba(250,248,243,.7);padding:80px 60px 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--cream);margin-bottom:16px}
+.footer-brand span{color:var(--terra-light);font-style:italic}
+.footer-tagline{font-size:.82rem;line-height:1.7;font-weight:300;opacity:.6;margin-bottom:28px}
+.footer-social{display:flex;gap:14px}
+.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:.9rem;cursor:pointer;transition:border-color .2s,background .2s}
+.social-btn:hover{border-color:var(--terra-light);background:rgba(196,132,90,.1)}
+.footer-heading{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-bottom:20px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:.82rem;color:rgba(250,248,243,.55);text-decoration:none;transition:color .2s;cursor:pointer}
+.footer-links a:hover{color:var(--terra-light)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:28px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:.72rem;opacity:.4}
+.footer-pay{display:flex;gap:10px;font-size:1.2rem;opacity:.5}
+ 
+/* =================== PAGE HERO (shared) =================== */
+.page-hero{padding:80px 60px;position:relative;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;z-index:0}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover}
+.page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(221,232,213,.92) 0%,rgba(221,232,213,.6) 60%,transparent 100%)}
+.page-hero-content{max-width:600px;position:relative;z-index:1}
+.page-hero-tag{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.page-hero-tag::before{content:'';display:block;width:40px;height:1px;background:var(--sage)}
+.page-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:300;line-height:1.1;margin-bottom:20px}
+.page-hero-title em{font-style:italic;color:var(--terra)}
+.page-hero-desc{font-size:.9rem;line-height:1.8;color:rgba(46,53,40,.75);font-weight:300}
+ 
+/* =================== KOLEKSI / SPECIES =================== */
+.birds-filter{background:var(--warm-white);padding:30px 60px;border-bottom:1px solid rgba(138,158,126,.15);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.filter-label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+.species-section{padding:80px 60px}
+.species-tabs{display:flex;gap:4px;margin-bottom:48px;flex-wrap:wrap}
+.species-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.species-card{background:var(--cream);border:1px solid rgba(138,158,126,.15);overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.species-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(46,53,40,.1)}
+.species-card-img{width:100%;height:180px;overflow:hidden}
+.species-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.species-card:hover .species-card-img img{transform:scale(1.07)}
+.species-card-body{padding:16px 20px;text-align:center}
+.species-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:4px}
+.species-latin{font-size:.72rem;font-style:italic;color:rgba(46,53,40,.5);margin-bottom:10px}
+.species-price{font-size:.9rem;font-weight:500;color:var(--terra);margin-bottom:10px}
+.species-availability{font-size:.68rem;padding:3px 10px;letter-spacing:.08em;text-transform:uppercase}
+.available{background:rgba(39,174,96,.12);color:var(--success)}
+.limited{background:rgba(196,132,90,.12);color:var(--terra)}
+.sold-out{background:rgba(231,76,60,.12);color:var(--danger)}
+ 
+.bird-care-section{background:var(--cream);padding:80px 60px}
+.care-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.care-card{background:var(--warm-white);padding:32px 24px;border:1px solid rgba(138,158,126,.15)}
+.care-icon{font-size:2.5rem;margin-bottom:16px}
+.care-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:10px}
+.care-text{font-size:.82rem;line-height:1.7;color:rgba(46,53,40,.65)}
+ 
+.collection-info{padding:80px 60px;background:var(--cream)}
+.info-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.info-card{background:var(--warm-white);padding:36px;border:1px solid rgba(138,158,126,.15)}
+.info-card-icon{font-size:2.5rem;margin-bottom:20px}
+.info-card-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:12px}
+.info-card-text{font-size:.85rem;line-height:1.8;color:rgba(46,53,40,.7)}
+ 
+/* =================== PERLENGKAPAN =================== */
+.equip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:60px;background:var(--warm-white)}
+.equip-card{background:var(--cream);border:1px solid rgba(138,158,126,.15);overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.equip-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(46,53,40,.1)}
+.equip-img{width:100%;height:220px;overflow:hidden;position:relative}
+.equip-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.equip-card:hover .equip-img img{transform:scale(1.06)}
+.equip-badge{position:absolute;top:14px;left:14px;background:var(--terra);color:white;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;z-index:1}
+.equip-body{padding:24px}
+.equip-cat{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:8px}
+.equip-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:8px}
+.equip-desc{font-size:.82rem;line-height:1.6;color:rgba(46,53,40,.65);margin-bottom:16px}
+.equip-footer{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid rgba(138,158,126,.15)}
+.equip-price{font-size:1.1rem;font-weight:500;color:var(--terra)}
+.equip-price-original{font-size:.8rem;text-decoration:line-through;color:rgba(46,53,40,.4);display:block}
+.equip-rating{font-size:.78rem;color:var(--gold);margin-bottom:12px}
+.equip-rating span{color:rgba(46,53,40,.5)}
+ 
+.btn-cart-small{padding:8px 16px;background:var(--warm-white);border:1px solid var(--terra);color:var(--terra);font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.08em;cursor:pointer;transition:all .2s;text-transform:uppercase}
+.btn-cart-small:hover{background:var(--terra);color:white}
+ 
+/* =================== FEATURE STRIP =================== */
+.feature-strip{background:var(--deep);color:var(--cream);padding:60px}
+.feature-strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.feature-item{text-align:center}
+.feature-icon{font-size:2.5rem;margin-bottom:16px}
+.feature-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:8px}
+.feature-text{font-size:.8rem;opacity:.6;line-height:1.6}
+ 
+/* =================== PERAWATAN =================== */
+.care-page{background:var(--warm-white)}
+.care-intro{padding:80px 60px;background:var(--cream)}
+.care-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:48px}
+.care-intro-text p{font-size:.9rem;line-height:1.9;color:rgba(46,53,40,.75);margin-bottom:16px;font-weight:300}
+.care-intro-visual{width:100%;height:360px;overflow:hidden;border-radius:2px}
+.care-intro-visual img{width:100%;height:100%;object-fit:cover}
+.care-tips{padding:80px 60px;background:var(--warm-white)}
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:48px}
+.tip-card{background:var(--cream);padding:36px;border:1px solid rgba(138,158,126,.15);border-left:4px solid var(--terra)}
+.tip-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--sage-light);line-height:1;margin-bottom:12px}
+.tip-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:12px}
+.tip-text{font-size:.85rem;line-height:1.8;color:rgba(46,53,40,.7)}
+.care-schedule{padding:80px 60px;background:var(--cream)}
+.schedule-table{width:100%;border-collapse:collapse;margin-top:40px}
+.schedule-table th{background:var(--deep);color:var(--cream);padding:16px 20px;text-align:left;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:400}
+.schedule-table td{padding:14px 20px;border-bottom:1px solid rgba(138,158,126,.15);font-size:.88rem}
+.schedule-table tr:nth-child(even) td{background:rgba(138,158,126,.05)}
+.schedule-table tr:hover td{background:rgba(138,158,126,.1)}
+.badge-freq{display:inline-block;padding:3px 10px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+.badge-daily{background:rgba(39,174,96,.15);color:var(--success)}
+.badge-weekly{background:rgba(201,168,76,.15);color:var(--gold)}
+.badge-monthly{background:rgba(196,132,90,.15);color:var(--terra)}
+.care-faq{padding:80px 60px;background:var(--warm-white)}
+.faq-list{margin-top:40px}
+.faq-item{border-bottom:1px solid rgba(138,158,126,.2)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-size:.95rem;font-weight:500}
+.faq-q:hover{color:var(--terra)}
+.faq-icon{font-size:1.2rem;transition:transform .3s;color:var(--terra)}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:20px}
+.faq-a p{font-size:.88rem;line-height:1.8;color:rgba(46,53,40,.7)}
+ 
+/* =================== BLOG =================== */
+.blog-page{background:var(--warm-white)}
+.blog-featured{padding:60px;background:var(--cream)}
+.blog-featured-grid{display:grid;grid-template-columns:2fr 1fr;gap:40px;margin-top:40px}
+.blog-featured-card{background:var(--warm-white);border:1px solid rgba(138,158,126,.15);overflow:hidden;cursor:pointer;transition:box-shadow .3s}
+.blog-featured-card:hover{box-shadow:0 20px 50px rgba(46,53,40,.1)}
+.blog-card-img{width:100%;height:260px;overflow:hidden}
+.blog-card-img.small{height:160px}
+.blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.blog-featured-card:hover .blog-card-img img{transform:scale(1.05)}
+.blog-card-body{padding:28px}
+.blog-tag{display:inline-block;background:var(--terra);color:white;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;margin-bottom:14px}
+.blog-card-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;line-height:1.3;margin-bottom:12px}
+.blog-card-title.small{font-size:1.1rem}
+.blog-card-excerpt{font-size:.85rem;line-height:1.7;color:rgba(46,53,40,.65);margin-bottom:16px}
+.blog-card-meta{font-size:.72rem;letter-spacing:.05em;color:rgba(46,53,40,.5)}
+.blog-card-meta span{margin-right:16px}
+.blog-sidebar{display:flex;flex-direction:column;gap:24px}
+.blog-sidebar-card{background:var(--warm-white);border:1px solid rgba(138,158,126,.15);overflow:hidden;cursor:pointer;transition:box-shadow .3s}
+.blog-sidebar-card:hover{box-shadow:0 10px 30px rgba(46,53,40,.08)}
+.blog-all{padding:60px;background:var(--warm-white)}
+.blog-all-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px}
+.blog-all-card{background:var(--cream);border:1px solid rgba(138,158,126,.15);overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.blog-all-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(46,53,40,.08)}
+.blog-all-img{width:100%;height:180px;overflow:hidden}
+.blog-all-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.blog-all-card:hover .blog-all-img img{transform:scale(1.06)}
+.blog-all-body{padding:20px}
+.blog-all-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:8px;line-height:1.4}
+.blog-all-excerpt{font-size:.8rem;line-height:1.6;color:rgba(46,53,40,.6);margin-bottom:12px}
+.blog-all-meta{font-size:.7rem;color:rgba(46,53,40,.45)}
+.blog-topics{padding:60px;background:var(--cream)}
+.topics-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:36px}
+.topic-pill{background:var(--warm-white);border:1px solid rgba(138,158,126,.2);overflow:hidden;cursor:pointer;transition:all .2s}
+.topic-pill:hover{background:var(--deep);color:var(--cream);border-color:var(--deep)}
+.topic-pill-img{width:100%;height:80px;overflow:hidden}
+.topic-pill-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.topic-pill:hover .topic-pill-img img{transform:scale(1.1)}
+.topic-pill-name{font-size:.78rem;padding:10px;text-align:center}
+ 
+/* =================== MODALS =================== */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+.modal-overlay.active{display:flex}
+.modal{background:var(--warm-white);max-width:900px;width:100%;max-height:90vh;overflow-y:auto;border-radius:4px;position:relative}
+.modal-close{position:absolute;top:20px;right:20px;background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--deep);opacity:.6;transition:opacity .2s;z-index:10}
+.modal-close:hover{opacity:1}
+.product-detail{display:grid;grid-template-columns:1fr 1fr}
+.pd-gallery{background:var(--mist);min-height:400px;overflow:hidden}
+.pd-gallery img{width:100%;height:100%;object-fit:cover}
+.pd-info{padding:40px;overflow-y:auto}
+.pd-category{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:12px}
+.pd-name{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;margin-bottom:16px}
+.pd-rating{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.pd-stars{color:var(--gold)}
+.pd-review-count,.pd-sold{font-size:.8rem;color:rgba(46,53,40,.6)}
+.pd-price{font-size:1.8rem;font-weight:600;color:var(--terra);margin-bottom:8px}
+.pd-price-original{font-size:1rem;text-decoration:line-through;color:rgba(46,53,40,.4);margin-left:12px}
+.pd-discount{background:var(--terra);color:white;padding:2px 8px;font-size:.7rem;margin-left:12px}
+.pd-description{margin:24px 0;padding:24px 0;border-top:1px solid rgba(138,158,126,.2);border-bottom:1px solid rgba(138,158,126,.2)}
+.pd-desc-title{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:12px}
+.pd-desc-text{font-size:.9rem;line-height:1.8;color:rgba(46,53,40,.75)}
+.pd-specs{margin-bottom:24px}
+.pd-spec-row{display:flex;padding:8px 0;font-size:.85rem;border-bottom:1px solid rgba(138,158,126,.1)}
+.pd-spec-label{width:120px;color:rgba(46,53,40,.6)}
+.pd-spec-value{flex:1;font-weight:500}
+.pd-quantity{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.pd-qty-label{font-size:.85rem;color:rgba(46,53,40,.7)}
+.qty-control{display:flex;align-items:center;border:1px solid rgba(138,158,126,.3)}
+.qty-btn{width:36px;height:36px;background:none;border:none;cursor:pointer;font-size:1.2rem;color:var(--deep);transition:background .2s}
+.qty-btn:hover{background:var(--mist)}
+.qty-input{width:50px;height:36px;text-align:center;border:none;border-left:1px solid rgba(138,158,126,.3);border-right:1px solid rgba(138,158,126,.3);font-family:'Jost',sans-serif;font-size:1rem}
+.qty-input:focus{outline:none}
+.pd-stock{font-size:.8rem;color:rgba(46,53,40,.6)}
+.pd-actions{display:flex;gap:12px}
+.btn-add-cart{flex:1;padding:14px 24px;background:var(--warm-white);border:2px solid var(--terra);color:var(--terra);font-family:'Jost',sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.btn-add-cart:hover{background:var(--terra);color:white}
+.btn-buy-now{flex:1;padding:14px 24px;background:var(--terra);border:2px solid var(--terra);color:white;font-family:'Jost',sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.btn-buy-now:hover{background:var(--terra-light);border-color:var(--terra-light)}
+ 
+/* =================== CART SIDEBAR =================== */
+.cart-sidebar{position:fixed;top:0;right:-450px;width:450px;height:100vh;background:var(--warm-white);z-index:1001;transition:right .3s ease;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.1)}
+.cart-sidebar.active{right:0}
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.cart-overlay.active{opacity:1;visibility:visible}
+.cart-header{padding:24px;border-bottom:1px solid rgba(138,158,126,.2);display:flex;justify-content:space-between;align-items:center}
+.cart-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400}
+.cart-close{background:none;border:none;font-size:1.5rem;cursor:pointer;opacity:.6;transition:opacity .2s}
+.cart-close:hover{opacity:1}
+.cart-items{flex:1;overflow-y:auto;padding:24px}
+.cart-empty{text-align:center;padding:60px 20px;color:rgba(46,53,40,.5)}
+.cart-empty-icon{font-size:4rem;margin-bottom:16px;opacity:.5}
+.cart-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(138,158,126,.1)}
+.cart-item-img{width:80px;height:80px;overflow:hidden;flex-shrink:0}
+.cart-item-img img{width:100%;height:100%;object-fit:cover}
+.cart-item-info{flex:1}
+.cart-item-name{font-family:'Cormorant Garamond',serif;font-size:1rem;margin-bottom:4px}
+.cart-item-category{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(46,53,40,.5);margin-bottom:8px}
+.cart-item-price{font-weight:500;color:var(--terra);margin-bottom:8px}
+.cart-item-qty{display:flex;align-items:center;gap:8px}
+.cart-qty-btn{width:28px;height:28px;border:1px solid rgba(138,158,126,.3);background:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.cart-qty-btn:hover{background:var(--mist)}
+.cart-item-remove{background:none;border:none;color:var(--danger);font-size:.75rem;cursor:pointer;margin-left:auto;opacity:.7;transition:opacity .2s}
+.cart-item-remove:hover{opacity:1}
+.cart-footer{padding:24px;border-top:1px solid rgba(138,158,126,.2);background:var(--cream)}
+.cart-subtotal{display:flex;justify-content:space-between;margin-bottom:8px;font-size:.9rem}
+.cart-total{display:flex;justify-content:space-between;font-size:1.2rem;font-weight:600;margin-bottom:20px;padding-top:12px;border-top:1px solid rgba(138,158,126,.2)}
+.cart-total-price{color:var(--terra)}
+.btn-checkout{width:100%;padding:16px;background:var(--deep);color:var(--cream);border:none;font-family:'Jost',sans-serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.btn-checkout:hover{background:var(--sage-dark)}
+.btn-checkout:disabled{background:#ccc;cursor:not-allowed}
+ 
+/* =================== CHECKOUT MODAL =================== */
+.checkout-modal{max-width:600px;padding:40px}
+.checkout-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:8px}
+.checkout-subtitle{font-size:.85rem;color:rgba(46,53,40,.6);margin-bottom:32px}
+.checkout-section{margin-bottom:28px}
+.checkout-section-title{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(138,158,126,.2)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-row.full{grid-template-columns:1fr}
+.form-group{display:flex;flex-direction:column}
+.form-label{font-size:.8rem;margin-bottom:6px;color:rgba(46,53,40,.8)}
+.form-input,.form-select,.form-textarea{padding:12px 14px;border:1px solid rgba(138,158,126,.3);background:white;font-family:'Jost',sans-serif;font-size:.9rem;transition:border-color .2s}
+.form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--sage)}
+.form-textarea{resize:vertical;min-height:80px}
+.payment-options{display:flex;flex-direction:column;gap:12px}
+.payment-option{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid rgba(138,158,126,.3);cursor:pointer;transition:all .2s}
+.payment-option:hover{border-color:var(--sage)}
+.payment-option.selected{border-color:var(--terra);background:rgba(196,132,90,.05)}
+.payment-option input{display:none}
+.payment-radio{width:18px;height:18px;border:2px solid rgba(138,158,126,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.payment-option.selected .payment-radio{border-color:var(--terra)}
+.payment-option.selected .payment-radio::after{content:'';width:10px;height:10px;background:var(--terra);border-radius:50%}
+.payment-icon{font-size:1.5rem}
+.payment-info{flex:1}
+.payment-name{font-weight:500;font-size:.9rem}
+.payment-desc{font-size:.75rem;color:rgba(46,53,40,.6)}
+.checkout-summary{background:var(--cream);padding:20px;margin-bottom:24px}
+.summary-row{display:flex;justify-content:space-between;margin-bottom:8px;font-size:.9rem}
+.summary-total{display:flex;justify-content:space-between;font-size:1.1rem;font-weight:600;padding-top:12px;margin-top:12px;border-top:1px solid rgba(138,158,126,.2)}
+.summary-total-price{color:var(--terra)}
+.btn-place-order{width:100%;padding:16px;background:var(--terra);color:white;border:none;font-family:'Jost',sans-serif;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.btn-place-order:hover{background:var(--terra-light)}
+ 
+/* =================== RECEIPT MODAL =================== */
+.receipt-modal{max-width:550px;padding:0}
+.receipt-container{padding:40px}
+.receipt-header{text-align:center;padding-bottom:24px;border-bottom:2px dashed rgba(138,158,126,.3);margin-bottom:24px}
+.receipt-logo{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;margin-bottom:8px}
+.receipt-logo span{color:var(--terra);font-style:italic}
+.receipt-tagline{font-size:.75rem;color:rgba(46,53,40,.6);margin-bottom:16px}
+.receipt-success{display:inline-flex;align-items:center;gap:8px;background:rgba(39,174,96,.1);color:var(--success);padding:8px 16px;font-size:.8rem;font-weight:500}
+.receipt-info{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(138,158,126,.2)}
+.receipt-info-label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(46,53,40,.5);margin-bottom:4px}
+.receipt-info-value{font-size:.9rem;font-weight:500}
+.receipt-items-title{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:16px}
+.receipt-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(138,158,126,.1)}
+.receipt-item-name{font-size:.9rem}
+.receipt-item-qty{font-size:.8rem;color:rgba(46,53,40,.6)}
+.receipt-item-price{font-weight:500;text-align:right}
+.receipt-totals{margin-top:20px;padding-top:16px;border-top:2px dashed rgba(138,158,126,.3)}
+.receipt-total-row{display:flex;justify-content:space-between;margin-bottom:8px;font-size:.9rem}
+.receipt-grand-total{display:flex;justify-content:space-between;font-size:1.2rem;font-weight:600;padding-top:12px;margin-top:12px;border-top:1px solid rgba(138,158,126,.2)}
+.receipt-grand-total-price{color:var(--terra)}
+.receipt-customer{margin-top:24px;padding:20px;background:var(--cream)}
+.receipt-customer-title{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(46,53,40,.5);margin-bottom:8px}
+.receipt-customer-name{font-weight:500;margin-bottom:4px}
+.receipt-customer-address{font-size:.85rem;color:rgba(46,53,40,.7);line-height:1.6}
+.receipt-footer{text-align:center;margin-top:24px;padding-top:24px;border-top:2px dashed rgba(138,158,126,.3)}
+.receipt-footer-text{font-size:.85rem;color:rgba(46,53,40,.6);margin-bottom:8px}
+.receipt-contact{font-size:.8rem;color:rgba(46,53,40,.5)}
+.receipt-actions{display:flex;gap:12px;padding:24px 40px;background:var(--cream);border-top:1px solid rgba(138,158,126,.2)}
+.btn-download-pdf{flex:1;padding:14px;background:var(--deep);color:var(--cream);border:none;font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s}
+.btn-download-pdf:hover{background:var(--sage-dark)}
+.btn-print{flex:1;padding:14px;background:white;border:1px solid var(--deep);color:var(--deep);font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s}
+.btn-print:hover{background:var(--deep);color:white}
+.btn-continue-shopping{width:100%;padding:14px;background:transparent;border:none;color:var(--terra);font-family:'Jost',sans-serif;font-size:.8rem;cursor:pointer;margin-top:12px}
+ 
+/* =================== TOAST =================== */
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--deep);color:var(--cream);padding:14px 28px;font-size:.85rem;z-index:2000;opacity:0;transition:transform .3s,opacity .3s;display:flex;align-items:center;gap:10px}
+.toast.active{transform:translateX(-50%) translateY(0);opacity:1}
+.toast-icon{font-size:1.2rem}
+ 
+/* =================== PRELOADER =================== */
+.preloader{position:fixed;inset:0;background:var(--warm-white);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s ease,visibility .6s}
+.preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.preloader-inner{text-align:center}
+.preloader-bird{width:80px;height:80px;border-radius:50%;overflow:hidden;margin:0 auto 16px}
+.preloader-bird img{width:100%;height:100%;object-fit:cover}
+.preloader-text{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--sage-dark);letter-spacing:.2em}
+ 
+/* =================== SCROLL REVEAL =================== */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+ 
+/* =================== PRINT =================== */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #receiptContent, #receiptContent * {
+    visibility: visible;
+  }
+
+  #receiptContent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+#receiptContent {
+  background: white;
+  padding: 20px;
+}
+
+/* Biar html2pdf bisa baca (karena modal biasanya hidden/fixed) */
+.receipt-modal {
+  position: relative !important;
+  transform: none !important;
+}
+ 
+/* =================== RESPONSIVE =================== */
+@media(max-width:1024px){
+  .hero,.blog-featured-grid{grid-template-columns:1fr}
+  .cat-grid,.care-grid,.feature-strip-grid{grid-template-columns:repeat(2,1fr)}
+  .prod-grid,.tips-grid{grid-template-columns:repeat(2,1fr)}
+  .test-grid,.footer-grid{grid-template-columns:1fr 1fr}
+  .product-detail,.care-intro-grid{grid-template-columns:1fr}
+  .species-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  nav{padding:16px 24px}
+  .nav-links{display:none}
+  .hero-left,.page-hero,.species-section,.collection-info,.care-intro,.care-tips,
+  .care-schedule,.care-faq,.blog-featured,.blog-all,.blog-topics,.categories,
+  .featured,.banner-left,.testimonials,.newsletter,.bird-care-section{padding:40px 24px}
+  .equip-grid{padding:40px 24px}
+  .cat-grid,.care-grid,.feature-strip-grid,.prod-grid,.test-grid,.species-grid,
+  .topics-grid,.blog-all-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  footer{padding:40px 24px}
+  .cart-sidebar{width:100%;right:-100%}
+  .form-row{grid-template-columns:1fr}
+  .receipt-info{grid-template-columns:1fr}
+  .info-cards{grid-template-columns:1fr}
+  .banner{grid-template-columns:1fr}
+  .banner-right{min-height:200px}
+  .hero-right{min-height:50vh}
+}
+/* =================== CARE ARTICLES (blog inside perawatan) =================== */
+.care-articles{padding:60px 60px 40px;background:var(--cream)}
+.care-articles .blog-featured-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:28px;margin-top:32px}
+.care-articles .blog-all-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+/* =================== ULASAN ACTION BAR (beranda) =================== */
+.ulasan-action-bar{
+  background: var(--deep);
+  padding: 40px 60px;
+}
+.ulasan-action-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.ulasan-action-text{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.ulasan-action-label{
+  font-size:.68rem;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--sage-light);
+  opacity:.7;
+}
+.ulasan-action-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;
+  font-weight:300;
+  color:var(--cream);
+}
+.btn-ulasan-cta{
+  background:var(--terra);
+  color:#fff;
+  border:none;
+  padding:14px 36px;
+  font-family:'Jost',sans-serif;
+  font-size:.78rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .3s,transform .2s;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.btn-ulasan-cta:hover{
+  background:#b3714b;
+  transform:translateY(-2px);
+}
+
+/* =================== ULASAN PAGE — 2 COLUMN LAYOUT =================== */
+#page-ulasan { background: var(--warm-white); }
+
+.ulasan-page-wrap {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 60px;
+  align-items: start;
+}
+
+/* LEFT COLUMN */
+.ulasan-page-header { margin-bottom: 32px; }
+.ulasan-page-label {
+  font-size: .68rem;
+  letter-spacing: .25em;
+  color: rgba(46,53,40,.5);
+  margin-bottom: 10px;
+}
+.ulasan-page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  color: var(--deep);
+}
+.ulasan-page-title em { font-style: italic; color: var(--terra); }
+.ulasan-page-sub { font-size: .88rem; color: rgba(46,53,40,.6); margin-bottom: 20px; }
+.ulasan-count-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--deep);
+}
+.ulasan-count-icon { font-size: 1rem; }
+
+/* Feed — TikTok Live Comment Style */
+.ulasan-feed-wrapper {
+  position: relative;
+  height: 620px;
+  overflow: hidden;
+  border-radius: 4px;
+  /* fade top & bottom */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 88%, transparent 100%);
+}
+
+.ulasan-feed-wrapper:hover .ulasan-feed {
+  animation-play-state: paused;
+}
+
+.ulasan-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* scroll akan dikontrol JS */
+}
+
+.ulasan-item {
+  background: #fff;
+  border-radius: 4px;
+  padding: 18px 22px;
+  display: flex;
+  gap: 16px;
+  border: 1px solid rgba(138,158,126,.15);
+  position: relative;
+  flex-shrink: 0;
+  transition: box-shadow .2s, transform .2s;
+}
+
+.ulasan-item:hover {
+  box-shadow: 0 4px 20px rgba(46,53,40,.08);
+  transform: translateX(3px);
+}
+
+/* Animasi masuk dari bawah untuk item baru */
+@keyframes slideInFromBottom {
+  from { opacity: 0; transform: translateY(40px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.ulasan-item.new-item {
+  animation: slideInFromBottom .45s cubic-bezier(.22,.68,0,1.2) both;
+  border-left: 3px solid var(--terra);
+}
+
+/* Tombol pause/play */
+.ulasan-scroll-ctrl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.ulasan-pause-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(46,53,40,.5);
+  background: none;
+  border: 1px solid rgba(138,158,126,.25);
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: 'Jost', sans-serif;
+}
+.ulasan-pause-btn:hover { color: var(--terra); border-color: var(--terra); }
+.ulasan-pause-btn.paused { color: var(--terra); border-color: var(--terra); background: rgba(196,132,90,.06); }
+
+/* Indikator live */
+.ulasan-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--terra);
+  font-weight: 500;
+}
+.ulasan-live-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--terra);
+  animation: livePulse 1.4s ease infinite;
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+.ulasan-item-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--mist);
+  color: var(--sage-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 600;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.ulasan-item-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.ulasan-item-body { flex: 1; min-width: 0; }
+.ulasan-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.ulasan-item-nameblock { display: flex; flex-direction: column; gap: 2px; }
+.ulasan-item-name { font-weight: 600; font-size: .95rem; color: var(--deep); }
+.ulasan-item-kota { font-size: .78rem; color: rgba(46,53,40,.55); }
+.ulasan-item-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.ulasan-item-time { font-size: .75rem; color: rgba(46,53,40,.45); white-space: nowrap; }
+.ulasan-item-kebab {
+  background: none; border: none; cursor: pointer;
+  color: rgba(46,53,40,.4); font-size: 1.2rem; padding: 0 4px;
+  line-height: 1;
+}
+.ulasan-item-stars { color: #f5a623; font-size: .85rem; margin-bottom: 8px; letter-spacing: 1px; }
+.ulasan-item-stars .empty { color: #ddd; }
+.ulasan-item-text { font-size: .88rem; color: rgba(46,53,40,.8); line-height: 1.65; }
+
+.btn-muat-lagi {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin: 32px auto 0;
+  padding: 14px 44px;
+  border: 1px solid rgba(46,53,40,.2);
+  background: none;
+  border-radius: 80px;
+  font-family: 'Jost', sans-serif;
+  font-size: .85rem; letter-spacing: .06em;
+  color: var(--deep); cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+.btn-muat-lagi:hover { background: var(--cream); border-color: var(--terra); color: var(--terra); }
+
+/* RIGHT COLUMN — FORM CARD */
+.ulasan-form-card {
+  background: #fff;
+  border-radius: 4px;
+  padding: 32px 28px 28px;
+  border: 1px solid rgba(138,158,126,.18);
+  box-shadow: 0 4px 24px rgba(46,53,40,.06);
+  position: sticky;
+  top: 90px;
+}
+.ulasan-form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem; font-weight: 400;
+  color: var(--deep); margin-bottom: 4px;
+}
+.ulasan-form-sub { font-size: .82rem; color: rgba(46,53,40,.55); margin-bottom: 20px; }
+
+/* Avatar Upload */
+.ulasan-avatar-upload {
+  position: relative; width: 68px; height: 68px;
+  margin: 0 auto 20px;
+  cursor: pointer;
+}
+.ulasan-avatar-preview {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: #e8e8e8;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.ulasan-avatar-cam {
+  position: absolute; bottom: 0; right: 0;
+  width: 24px; height: 24px;
+  background: var(--terra); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid #fff;
+}
+
+.ulasan-input {
+  width: 100%;
+  border: 1px solid rgba(138,158,126,.3);
+  background: var(--warm-white);
+  padding: 12px 14px;
+  font-family: 'Jost', sans-serif;
+  font-size: .9rem; color: var(--deep);
+  outline: none; margin-bottom: 12px;
+  border-radius: 2px;
+  transition: border-color .2s;
+}
+.ulasan-input:focus { border-color: var(--terra); }
+.ulasan-input::placeholder { color: rgba(46,53,40,.4); }
+
+.ulasan-rating-label {
+  font-size: .78rem; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(46,53,40,.7); margin-bottom: 8px;
+}
+.ulasan-stars-input {
+  display: flex; gap: 6px; margin-bottom: 14px;
+}
+.ulasan-stars-input .ustar {
+  font-size: 1.5rem; cursor: pointer;
+  color: #ccc; transition: color .15s, transform .15s;
+  user-select: none;
+}
+.ulasan-stars-input .ustar:hover,
+.ulasan-stars-input .ustar.active { color: #f5a623; transform: scale(1.15); }
+
+.ulasan-textarea {
+  width: 100%; min-height: 110px;
+  border: 1px solid rgba(138,158,126,.3);
+  background: var(--warm-white);
+  padding: 12px 14px;
+  font-family: 'Jost', sans-serif;
+  font-size: .88rem; color: var(--deep);
+  resize: vertical; outline: none; border-radius: 2px;
+  transition: border-color .2s;
+  margin-bottom: 6px;
+}
+.ulasan-textarea:focus { border-color: var(--terra); }
+.ulasan-textarea::placeholder { color: rgba(46,53,40,.4); }
+
+.ulasan-char-count {
+  font-size: .75rem; color: rgba(46,53,40,.45);
+  text-align: right; margin-bottom: 16px;
+}
+
+.btn-kirim-ulasan {
+  width: 100%;
+  padding: 15px;
+  background: var(--terra);
+  color: #fff; border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: .88rem; letter-spacing: .1em; text-transform: uppercase;
+  cursor: pointer; border-radius: 2px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: background .2s, transform .15s;
+}
+.btn-kirim-ulasan:hover { background: #b3714b; transform: translateY(-1px); }
+.btn-kirim-ulasan:active { transform: translateY(0); }
+
+.ulasan-privacy-note {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .75rem; color: rgba(46,53,40,.45);
+  margin-top: 12px; justify-content: center;
+}
+
+/* Thank you card */
+.ulasan-thankyou-card {
+  margin-top: 16px;
+  background: #fff5f0;
+  border-radius: 4px;
+  padding: 18px 20px;
+  display: flex; gap: 14px; align-items: flex-start;
+  border: 1px solid rgba(196,132,90,.2);
+}
+.ulasan-thankyou-heart { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.ulasan-thankyou-card p { font-size: .82rem; line-height: 1.6; color: rgba(46,53,40,.7); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ulasan-page-wrap { grid-template-columns: 1fr; padding: 40px 24px; }
+  .ulasan-form-card { position: static; }
+}
+
+/* Legacy cleanup — hide old styles */
+.yt-comment-section, .yt-input-container, .yt-feed { display: none; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
